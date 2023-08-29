@@ -29,7 +29,7 @@ const mySecret = process.env['DROP_KEY'];
 const htmlhead = `
 <!doctype html>
 <head>
-<link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/960823554088247366/972445384033042472/Odd_Logo.png" type="image/x-icon"/>
+<link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/960823554088247366/972445384033042472/Cat_logo.png" type="image/x-icon"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Catspin url</title>
 
