@@ -9,8 +9,8 @@ const ID_LENGTH = ID_MIN_LENGTH;
 const RESERVED = ["n", "l"];
 
 // === CHANGE THESE TO YOUR OWN DOMAIN ===
-const DEFAULT_HOST = "link.oddcoder.xyz";
-const DEFAULT_BASE = "https://link.oddcoder.xyz/";
+const DEFAULT_HOST = "url.catspin.eu.org";
+const DEFAULT_BASE = "url.catspin.eu.org";
 
 // If true, list page will be disabled. Stats page will work.
 // Note: if this is false, password-protected links will be disabled.
@@ -19,7 +19,7 @@ const KEEP_LINKS_SECRET = false;
 
 // If true, IP addresses will not be logged.
 // They will (must) still be used to rate limit incoming connections.
-const KEEP_IPS_UNLOGGED = true;
+const KEEP_IPS_UNLOGGED = false;
 
 const ip = (req) => {
   return KEEP_IPS_UNLOGGED?"XXX.XXX.XXX.XXX":req.get("X-Forwarded-For")
@@ -31,7 +31,7 @@ const htmlhead = `
 <head>
 <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/960823554088247366/972445384033042472/Odd_Logo.png" type="image/x-icon"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Odd URL</title>
+<title>Catspin url</title>
 
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -112,7 +112,7 @@ h1 {margin:0}
 
 const htmlend = `
 <footer><hr>
-<subtitle style="font-size:0.8rem;color:darkgray">Created by sestro <a href="${DEFAULT_BASE}">Home</a> | <a href="javascript:document.location.href='${DEFAULT_BASE}n?url='+encodeURIComponent(document.location.href)" onclick="alert('Drag this to your bookmarks bar.');return false;">Bookmarklet</a> | <a href="https://discord.gg/7KtdeePrHV">Discord</a> | <a href="https://github.com/odd-coder">Github</a>
+<subtitle style="font-size:0.8rem;color:darkgray">Created by Catspin <a href="${DEFAULT_BASE}"></a> | <a href="javascript:document.location.href='${DEFAULT_BASE}n?url='+encodeURIComponent(document.location.href)" onclick="alert('Drag this to your bookmarks bar.');return false;"></a> | <a href="Catspin.eu.org"></a> | <a href="https://github.com</a>
 </subtitle></footer>
 </div>
 </body>
@@ -213,7 +213,7 @@ app.get("/", async (req, res) => {
   res.end(`
       ${htmlhead}
       <div>
-      <b class="indextitle">URL shortner by Sestro</b><br/>
+      <b class="indextitle">URL shortner by Catspin</b><br/>
       
       ${ (DEFAULT_HOST !== req.get("host")) ? "<b class=errorbox><code>DEFAULT_HOST</code> variable in source does not seem to match current host. Either there is a host mismatch, or the administrator may have to configure the <code>DEFAULT_HOST</code> variable.</b>":"<br/>" }
 
@@ -227,7 +227,7 @@ app.get("/", async (req, res) => {
       <code>${base}n/?url=[url]</code> to make a new one. Append &id=[id] for custom id, append &json=true for JSON output.<br>
       <code>${base}l</code> for list of all.<br>
       <br>-->
-      <a href="l">Currently serving ${num} URLs.</a>
+      
   ` + htmlend)
 
 });
