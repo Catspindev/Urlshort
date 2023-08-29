@@ -9,8 +9,8 @@ const ID_LENGTH = ID_MIN_LENGTH;
 const RESERVED = ["n", "l"];
 
 // === CHANGE THESE TO YOUR OWN DOMAIN ===
-const DEFAULT_HOST = "url.catspin.eu.org";
-const DEFAULT_BASE = "url.catspin.eu.org";
+const DEFAULT_HOST = "beta.catspin.eu.org";
+const DEFAULT_BASE = "beta.catspin.eu.org";
 
 // If true, list page will be disabled. Stats page will work.
 // Note: if this is false, password-protected links will be disabled.
